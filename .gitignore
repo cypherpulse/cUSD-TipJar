@@ -1,0 +1,56 @@
+# Compiler files
+cache/
+out/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*/31337/
+/broadcast/**/dry-run/
+
+# Test failures
+test-failures/
+
+# Docs
+docs/
+
+# Dotenv file
+.env
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Foundry
+foundry.lock
+
+# Node modules (if any)
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Keystore (if local)
+keystore/
+
+# Build artifacts
+*.solc
+
+# PowerShell scripts
+*.ps1
+*.ps1
