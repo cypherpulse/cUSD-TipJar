@@ -7,7 +7,9 @@
 
 A secure, minimal smart contract for tipping in stablecoins on the Celo blockchain. Designed for simplicity, security, and educational purposes.
 
-![cTipJar Diagram](./assets/tipjar.png)
+![cTipJar Diagram](./assets/tipjar.PNG)
+
+
 ## Table of Contents
 
 - [Overview](#overview)
