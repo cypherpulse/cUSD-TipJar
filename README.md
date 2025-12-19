@@ -7,8 +7,7 @@
 
 A secure, minimal smart contract for tipping in stablecoins on the Celo blockchain. Designed for simplicity, security, and educational purposes.
 
-![cTipJar Diagram](assets/tipjar.png)
-
+![cTipJar Diagram](./assets/tipjar.png)
 ## Table of Contents
 
 - [Overview](#overview)
@@ -74,31 +73,31 @@ classDiagram
 
 ```mermaid
 flowchart TD
-    A[User/Tipper] --> B[Approve cTipJar to spend cUSD]
-    B --> C[Call tip(amount)]
-    C --> D{Validate amount > 0}
-    D -->|No| E[cTipJar__ZeroAmount error]
-    D -->|Yes| F[Transfer cUSD from tipper to contract]
-    F --> G{Transfer successful?}
-    G -->|No| H[cTipJar__TransferFailed error]
-    G -->|Yes| I[Update s_totalReceived += amount]
-    I --> J[Update s_tipsFrom[tipper] += amount]
-    J --> K[Emit Tipped event]
-    K --> L[Funds held in contract]
+    A[User/Tipper] --> B["Approve cTipJar to spend cUSD"]
+    B --> C["Call tip(amount)"]
+    C --> D{"Validate amount > 0"}
+    D -->|No| E["cTipJar__ZeroAmount error"]
+    D -->|Yes| F["Transfer cUSD from tipper to contract"]
+    F --> G{"Transfer successful?"}
+    G -->|No| H["cTipJar__TransferFailed error"]
+    G -->|Yes| I["Update s_totalReceived += amount"]
+    I --> J["Update s_tipsFrom[tipper] += amount"]
+    J --> K["Emit Tipped event"]
+    K --> L["Funds held in contract"]
 ```
 
 ### Withdrawal Flow
 
 ```mermaid
 flowchart TD
-    A[Owner] --> B[Call withdraw(amount) or withdrawAll()]
-    B --> C{Is caller owner?}
-    C -->|No| D[cTipJar__NotOwner error]
-    C -->|Yes| E{Check sufficient balance}
-    E -->|No| F[cTipJar__InsufficientBalance error]
-    E -->|Yes| G[Transfer cUSD to owner]
-    G --> H{Emit Withdrawn event}
-    H --> I[Funds transferred to owner wallet]
+    A[Owner] --> B["Call withdraw(amount) or withdrawAll()"]
+    B --> C{"Is caller owner?"}
+    C -->|No| D["cTipJar__NotOwner error"]
+    C -->|Yes| E{"Check sufficient balance"}
+    E -->|No| F["cTipJar__InsufficientBalance error"]
+    E -->|Yes| G["Transfer cUSD to owner"]
+    G --> H["Emit Withdrawn event"]
+    H --> I["Funds transferred to owner wallet"]
 ```
 
 ## Getting Started
